@@ -1,19 +1,53 @@
-# bmi_calculator
+#ETS Praktikum Pemrograman Mobile
+##Panduan Pengembangan Aplikasi: BMI Calculator
+###Dokumentasi Prosedur Praktikum (Pertemuan 3 - 5)
 
-A new Flutter project.
+####1. Inisialisasi Proyek
+Konfigurasi Lingkungan: Pastikan Flutter SDK dan Dart telah terinstalasi serta terkonfigurasi pada sistem.
 
-## Getting Started
+Generasi Proyek: Jalankan perintah flutter create bmi_calculator melalui terminal.
 
-This project is a starting point for a Flutter application.
+Arsitektur Folder: Terapkan pola struktur direktori yang rapi untuk pemisahan kepentingan (separation of concerns):
 
-A few resources to get you started if this is your first Flutter project:
+models/: Untuk definisi struktur data.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+services/: Untuk logika bisnis dan pengolahan data.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# bmi_calcullator
-# bmi_calcullator
+screens/: Untuk tata letak antarmuka utama.
+
+widgets/: Untuk komponen UI yang dapat digunakan kembali (reusable).
+
+####2. Konfigurasi Entry Point
+Modifikasi file main.dart untuk mendefinisikan tema global aplikasi (Theming) dan menetapkan UserInputScreen sebagai gerbang utama (Initial Route).
+
+####3. Pemodelan Data (Model)
+Implementasi bmi_category.dart: Membangun class BmiCategory yang mencakup atribut rentang nilai (min, max), label kategori, serta saran kesehatan (advice). Tambahkan getter untuk menentukan warna dan ikon secara dinamis berdasarkan kategori.
+
+####4. Layer Layanan (Service)
+BmiService: Logika untuk memetakan hasil perhitungan ke kategori yang sesuai, baik melalui data lokal maupun integrasi JSON.
+
+StorageService: Implementasi persistence data menggunakan package shared_preferences untuk menyimpan histori tinggi dan berat badan pengguna secara lokal.
+
+####5. Pengembangan Antarmuka Input (Input Screen)
+Menyusun user_input.dart yang terdiri dari:
+
+Komponen interaktif GenderToggle.
+
+Input numerik melalui TextField dan kontrol presisi menggunakan Slider.
+
+Tombol kalkulasi yang memicu fungsi navigasi menuju BmiResultScreen.
+
+####6. Visualisasi Hasil (Result Screen)
+Implementasi bmi_result.dart:
+
+Melakukan kalkulasi BMI berdasarkan formula standar.
+
+Menampilkan skor numerik, label kategori, saran medis, serta representasi visual (warna dan ikon) yang relevan.
+
+####7. Komponen Reusable (Widget)
+Pengembangan gender_toggle.dart: Membuat widget khusus yang menangani logika pemilihan gender dengan umpan balik visual yang interaktif.
+
+####8. Evaluasi dan Pengujian (Testing)
+Eksekusi Program: Menjalankan aplikasi menggunakan perintah flutter run.
+
+Uji Fungsionalitas: Memvalidasi akurasi input data (manual vs slider) dan memastikan algoritma perhitungan menghasilkan kategori yang valid sesuai standar kesehatan.
