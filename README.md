@@ -51,3 +51,11 @@ Pengembangan gender_toggle.dart: Membuat widget khusus yang menangani logika pem
 Eksekusi Program: Menjalankan aplikasi menggunakan perintah flutter run.
 
 Uji Fungsionalitas: Memvalidasi akurasi input data (manual vs slider) dan memastikan algoritma perhitungan menghasilkan kategori yang valid sesuai standar kesehatan.
+
+
+##Halaman Utama
+<img width="1909" height="983" alt="Screenshot 2026-05-03 172153" src="https://github.com/user-attachments/assets/d81892a5-8779-43a2-85a1-856379712a28" />
+
+
+##Halaman Result
+<img width="1917" height="973" alt="Screenshot 2026-05-03 172211" src="https://github.com/user-attachments/assets/583c1c33-81de-4fa9-be33-800eec34ac32" />
